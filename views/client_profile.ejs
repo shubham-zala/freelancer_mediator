@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body id="ForScroll">
+    <nav>
+        <a class="modernButton" href="/home/client/<%= user %>">Home</a>
+    </nav>
+    <br>
+    <table class="profile_table">
+        <th colspan="2" style="font-size:30px; color: bisque; background-color: rgb(1, 59, 98);">Your Profile</th>
+        <tr>
+            <td>id : </td>
+            <td><%= client.client_id %></td>
+        </tr>
+        <tr>
+            <td>first name : </td>
+            <td><%= client.first_name %></td>
+        </tr>
+        <tr>
+            <td>last name : </td>
+            <td><%= client.last_name %></td>
+        </tr>
+        <tr>
+            <td>DOB : </td>
+            <td><%= client.date_of_birth %></td>
+        </tr>
+        <tr>
+            <td>Organization name : </td>
+            <td><%= client.organization_name %></td>
+        </tr>
+        <tr>
+            <td>city : </td>
+            <td><%= client.city %></td>
+        </tr>
+        <tr>
+            <td>country : </td>
+            <td><%= country %></td>
+        </tr>
+        <tr>
+            <td>email id : </td>
+            <td><%= client.email_id %></td>
+        </tr>
+    </table>
+    <a href="#ForScroll" id="myBtn" title="Go to top">^</a>
+
+    <footer>
+        <center>
+            <h1>Freelancer Mediator</h1>
+            <br>
+            <h4>© Freelancer Mediator, All rights Reserved.</h4>
+            <h3>Owned By Group3</h3>
+        </center>
+    </footer>
+</body>
+<style>* {
+    box-sizing: border-box;
+    font-family: sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+    font-weight: 400;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.bgi
+{
+    background-image: url("freelancing_background.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-attachment: scroll;
+    background-position: center;
+    background-size:auto;
+    opacity: 0.5;
+    position: absolute;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+
+header {
+    text-align: center;
+    /* background-image: url('wheatFinal.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
+}
+
+@media screen and (min-width: 426px) {
+    header {
+        padding: 4px;
+        text-align: center;
+        background-image: url('wheatFinal.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+nav {
+
+    background-color: #005a9a;
+    overflow: hidden;
+    position: sticky;
+    display: flex;
+    top: -4px;
+}
+
+nav a {
+    margin: 10px 10px;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    float: left;
+    color: white;
+    background-attachment: fixed;
+    text-shadow: black 2px 2px 3px;
+    font-size: large;
+    font-weight: 400;
+    border: #acdcff;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0px;
+}
+
+.modernButton {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.modernButton::before {
+    content: "";
+    background-color: rgb(0, 60, 106);
+    transform: scaleX(0);
+    position: absolute;
+    border-radius: 5px;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    transition: all 0.15s;
+    z-index: -1;
+}
+
+.modernButton:hover::before {
+    transform: scaleX(1);
+}
+
+.modernButton:active {
+    color: aqua;
+    background-color: rgb(0, 60, 106)
+}
+
+.flexRight {
+    margin-left: auto;
+}
+
+@media screen and (max-width: 800px) {
+    nav a {
+        margin: 5px 5px;
+        padding: 5px;
+        text-shadow: black 1px 1px 2px;
+        font-size: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .flexRight {
+        margin-left: 0;
+    }
+}
+
+main {
+    box-sizing: border-box;
+    margin: 5% 5%;
+    background-color: rgb(255, 250, 250);
+    text-align: left;
+    text-align: justify;
+    background-image: url('mainBacckground.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: rgb(34, 0, 35);
+    border: 4px solid #073759;
+}
+
+main b {
+    color: red;
+    font-weight: 400;
+    font-size: 35px;
+    text-shadow: black 2px 2px 3px, green 1px 1px 2px;
+}
+
+@media screen and (max-width: 426px) {
+
+    main b {
+        font-size: 30px;
+        text-shadow: black 1px 1px 2px, green 1px 1px 2px;
+    }
+
+    main h2 {
+        font-size: 20px;
+    }
+}
+
+main h2 {
+    text-shadow: black 2px 2px 3px;
+}
+
+main center img {
+    animation: zoomin 2s ease 0s 1;
+    width: 25%;
+}
+
+@keyframes zoomin {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+
+    100% {
+        width: 25%;
+        height: 25%;
+    }
+}
+
+#mainIntro {
+    background-color: rgba(23, 67, 17, 0.597);
+    color: rgb(255, 255, 255);
+    text-decoration: double;
+}
+
+h2 {
+    padding: 20px;
+}
+
+/* section:nth-child(even) {
+    background-color: rgb(241, 241, 241);
+} */
+
+section {
+    display: table;
+    width: 100%;
+}
+
+video {
+    padding: 10px;
+}
+
+iframe {
+    height: 75vh;
+}
+
+img {
+    padding: 10px;
+}
+
+section h5 {
+    margin: 40px;
+}
+
+footer {
+    background-color: #005a9a;
+    color: aliceblue;
+    overflow: hidden;
+    clear: both;
+}
+
+footer a {
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    float: left;
+    color: white;
+}
+
+.class {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px;
+    background-color: rgb(255, 255, 255);
+    height: 300px;
+    width: 250px;
+    border: 3px;
+    border-style: solid;
+    border-color: rgb(80, 62, 28);
+    border-radius: 10px;
+    text-align: center;
+    float: left;
+    box-sizing: border-box;
+    transition: ease border 0.5s;
+}
+
+.class:hover {
+    border: 6px solid rgb(12, 32, 103);
+}
+
+@media screen and (max-width: 426px) {
+    .class {
+        clear: both;
+        margin-left: 10%;
+    }
+}
+
+.topTitle {
+    text-align: center;
+    display: flex;
+}
+
+#box1 {
+    padding: 30px;
+    padding-left: 75px;
+    align-content: center;
+    height: 400px;
+    width: 1500px;
+    border: 4px;
+    border-style: solid;
+    border-color: rgb(80, 62, 28);
+    border-radius: 10px;
+}
+
+#aboutUS {
+    color: darkblue;
+    text-shadow: 2px 2px 2px bisque;
+    padding: 3%;
+    align-content: center;
+    margin: 1%;
+    /* border: 5px solid rgb(11, 11, 61); */
+    font-size: 25px;
+    width: 98%;
+}
+
+div center h1 {
+    animation: aboutContactUsZoomIn 2s ease 0s 1;
+}
+
+@keyframes aboutContactUsZoomIn {
+    0% {
+        font-size: 0em;
+    }
+
+    100% {
+        font-size: 10%px;
+    }
+}
+
+#saparPhotoCss {
+    width: 98%;
+    border: 3px;
+    border-style: solid;
+    border-color: rgb(80, 62, 28);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    border-radius: 10px;
+    border: 7px solid rgb(43, 7, 72);
+    margin: auto;
+
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        width: 100%;
+        border: 4px solid rgb(28, 0, 72);
+        margin: auto;
+        display: table;
+    }
+}
+
+.item {
+    border: 3px solid rgb(0, 153, 255);
+    margin: 15px 15px 15px 15px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    background-color: rgb(149, 220, 255);
+}
+
+.item h1 {
+    text-shadow: 3px 2px 3px #0f64a1;
+    color: red;
+    text-decoration: solid;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 700px) {
+    .item {
+        clear: both
+    }
+}
+
+#left {
+    float: left;
+    width: 48%;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#right {
+    float: right;
+    width: 48%;
+}
+
+@media screen and (max-width: 700px) {
+    #left {
+        float: left;
+        width: 93%;
+    }
+
+    #right {
+        float: left;
+        width: 93%;
+    }
+}
+
+.btn {
+    background-color: #0c4a76;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+.btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(44, 181, 255);
+}
+
+center h3 b {
+    text-shadow: rgb(143, 197, 255) 2px 2px 3px;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+div center h1 {
+    text-shadow: rgb(0, 54, 169) 2px 2px 3px;
+    font-size: 45px;
+    font-weight: 400;
+}
+
+legend {
+    font-size: 45px;
+    color: black;
+    text-shadow: rgb(177, 233, 255) 2px 2px 3px;
+}
+
+/* for and you have to write and and so on but for the or operator you should write code in given way the idea of coma */
+
+.picturebox {
+    float: left;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 24%;
+    box-shadow: 10px 10px 10px 10px #acdcff;
+    border: 4px solid rgb(13, 57, 169);
+}
+
+.picturebox img {
+    object-fit: scale-down;
+    width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+    .picturebox {
+        float: left;
+        width: 48%;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .picturebox {
+        float: left;
+        width: 96%;
+        padding: 5px;
+    }
+}
+
+.picturebox:hover {
+    border: solid rgb(13, 57, 169);
+}
+
+.mini {
+    border-radius: 5px;
+    font-size: 150%;
+    padding: 5px;
+    margin: 15px;
+    background-color: rgb(255, 255, 255);
+    height: 260px;
+    width: 85%;
+    border: 3px;
+    border-style: solid;
+    border-color: rgb(80, 62, 28);
+    border-radius: 10px;
+    text-align: center;
+    float: left;
+    box-sizing: border-box;
+    display: table;
+    box-shadow: 0 4px 8px 0 rgb(55, 148, 255), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: width 0.5s, height 0.5s, border 0.5s;
+}
+
+.mini:hover {
+    border: 6px solid rgb(12, 32, 103);
+    width: 90%;
+    height: 300px;
+}
+
+
+#achievement {
+    border-radius: 5px;
+    font-size: 150%;
+    padding: 2px;
+    margin: 15px;
+    background-color: rgb(255, 255, 255);
+    height: 300px;
+    border: 3px;
+    width: 15%;
+    border-style: solid;
+    border-color: rgb(80, 62, 28);
+    border-radius: 10px;
+    text-align: center;
+    float: left;
+    box-sizing: border-box;
+    display: table;
+    box-shadow: 4px 4px 2px 0 rgba(125, 238, 255, 0.648), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#achievement img {
+    object-fit: scale-down;
+}
+
+.mini img {
+    object-fit: scale-down;
+    width: 100%;
+}
+
+#achievement:hover {
+    border: 6px solid rgb(12, 32, 103);
+}
+
+#box {
+    background: linear-gradient(90deg, rgba(6, 80, 147, 0.8016456582633054) 0%, rgba(106, 199, 204, 0.3618697478991597) 21%, rgba(224, 164, 207, 0.2946428571428571) 52%, rgba(72, 183, 210, 0.31985294117647056) 79%, rgba(17, 93, 149, 0.756827731092437) 97%);
+    padding: 30px;
+    width: 99%;
+    border: 4px;
+    border-style: solid;
+    border-color: rgb(40, 0, 68);
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly6;
+    flex-wrap: wrap;
+    margin: 1%;
+}
+
+@media screen and (max-width: 1000px) {
+    .mini {
+        float: left;
+        width: 40%;
+        padding: 5px;
+    }
+
+    .mini:hover {
+        border: 6px solid rgb(12, 32, 103);
+        width: 45%;
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .mini {
+        float: left;
+        width: 80%;
+        padding: 5px;
+    }
+
+    .mini:hover {
+        border: 6px solid rgb(12, 32, 103);
+        width: 90%;
+        height: 260px;
+    }
+}
+
+.factory img {
+    width: 30%;
+    height: 30%;
+    border: 5px solid #005a9a;
+    border-radius: 50%;
+    transition: width 2s, height 2s, border 2s, background-color 3s, border-radius 1s;
+}
+
+.factory img:hover {
+    width: 40%;
+    height: 40%;
+    border-radius: 100px;
+    background-color: rgba(0, 241, 249, 0.348);
+    border: 10px solid #005a9a;
+}
+
+@media screen and (max-width: 1000px) {
+    .factory img {
+        width: 50%;
+        height: 50%;
+        border: 5px solid #005a9a;
+        border-radius: 50%;
+        transition: width 2s, height 2s, border 2s, background-color 3s, border-radius 1s;
+    }
+
+    .factory img:hover {
+        width: 70%;
+        height: 70%;
+        border-radius: 100px;
+        background-color: rgb(0, 241, 249);
+        border: 10px solid #005a9a;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .factory img {
+        width: 70%;
+        height: 70%;
+        border: 5px solid #005a9a;
+        border-radius: 50%;
+        transition: width 2s, height 2s, border 2s, background-color 3s, border-radius 1s;
+    }
+
+    .factory img:hover {
+        width: 90%;
+        height: 90%;
+        border-radius: 100px;
+        background-color: rgb(0, 241, 249);
+        border: 10px solid #005a9a;
+    }
+}
+
+#OurAchivements {
+    color: rgb(0, 61, 100);
+}
+
+#nameform,
+#subjectform {
+    color: beige;
+    padding: 10px;
+    background-color: #073759;
+    border-radius: 5px;
+}
+
+#emailform,
+#massageform {
+    color: beige;
+    padding: 10px;
+    background-color: #0f64a1;
+    border-radius: 5px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#myBtn {
+    position: sticky;
+    float: right;
+    bottom: 10px;
+    right: 20px;
+    z-index: 99;
+    background-color: rgb(20, 72, 145);
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: solid black 3px;
+    text-decoration: none;
+}
+
+#myBtn:hover {
+    background-color: rgb(8, 35, 72);
+}
+
+#link {
+    background-color: #0f64a1;
+    color: beige;
+    padding: auto;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 2px;
+    border: solid rgb(0, 15, 73) 3px;
+    border-radius: 50%;
+}
+
+#link:hover {
+    background-color: #00406e;
+}
+
+#loginTable {
+    display: flex;
+    margin: 30px;
+    border: solid 3px #005a9a;
+    padding: 4%;
+    max-width: fit-content;
+    min-width: fit-content;
+    box-sizing: border-box;
+    /* margin-left: 42%;
+    margin-right: 44%; */
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #acdcff;
+    border-radius: 5px;
+}
+
+.loginBtn {
+    background-color: #5ebcff;
+    border: none;
+    border-radius: 3px;
+}
+
+.loginBtn:hover {
+    background-color: #00487c;
+    color: aqua;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+}
+
+table,
+tr,
+td,
+th {
+    margin-right: auto;
+    padding: 25px;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: rgb(127, 229, 255);
+    border-radius: 5px;
+}
+
+.profile_table {
+    margin: auto;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.background
+{
+    text-align: center;
+    min-height: 500px;
+}
+
+/* .container22 {
+    position: relative;
+}
+.container22 .container-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(freelancing_background.jpg);
+    opacity: 0.1;
+}
+.container22 .content {
+    position: relative;
+    z-index: 1;
+} */
+
+select {
+    margin: 10px 10px;
+    text-decoration: none;
+    padding: 0px;
+    color: white;
+    text-shadow: black 2px 2px 3px;
+    font-size: large;
+    font-weight: 400;
+    background-color: #005a9a;
+}</style>
+</html>

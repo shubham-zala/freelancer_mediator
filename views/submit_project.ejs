@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/css.css">
+</head>
+
+<body id="ForScroll">
+    <nav>
+        <a class="modernButton" href="/home/freelancer/<%= user %>">Home</a>
+        <!-- <a class="modernButton" href="freelancer_profile.html">Profile</a>
+        <a class="modernButton" href="contract_form.html">Do Contract</a>
+        <a class="modernButton" href="submit_project.html" style="color: aqua;">Submit Project</a>
+        <select id="myDropdown" onchange="goToPage()">
+            <option value="myProjects">My Projects</option>
+            <option value="myContracts">My Contracts</option>
+            <option value="myTransactions">My Transactions</option>
+            <option value="myReviews">My Reviews</option>
+            <option value="" selected>Select</option>
+        </select> -->
+        <!-- <script>
+            function goToPage() {
+                var dropdown = document.getElementById("myDropdown");
+                var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+
+                // Check if a valid option (not "Select") is selected
+                if (selectedOption !== "") {
+                    // Redirect to the corresponding page
+                    window.location.href = selectedOption + ".html"; // Change the extension as needed
+                }
+            }
+        </script>
+        <form action="" style="margin: 5px; margin-left: auto;">
+            <button
+                style="float: right;color: aqua; background-color: rgb(0, 39, 86); width: 40px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; height: 40px;margin: 5px; margin-left: 0px;">Go</button>
+            <span><input
+                    style=" float: right; width: 200px; border-top-left-radius: 15px; border-bottom-left-radius: 15px; padding: 5px; height: 40px;margin: 5px; margin-left: auto; margin-right: 0px;"
+                    id="search" type="text" name="search" placeholder="Search..."></span>
+
+        </form>
+        <script type="text/javascript">
+            $(function () {
+                $("#search").autocomplete({
+                    name: 'search',
+                    source: 'http://localhost:3000/search?key=%QUERY',
+                    limit: 10
+                });
+            });
+        </script> -->
+        <!-- <a class="modernButton" href="/logout">Logout</a> -->
+    </nav>
+    <div>
+        <center>
+            <h1 style="background-color: aqua;">
+                Project Submittion
+            </h1>
+        </center>
+    </div>
+        <table class="profile_table">
+            <form action="mailto:paawanwala2017@gmail.com" method="post" enctype="text/plain">
+                <th style="font-size:30px; color: bisque; background-color: rgb(1, 59, 98);">Submittion Details</th>
+                <tr><td><p id="nameform">
+                    Contract id :* <br><input name="Contract id" type="number" required>
+                </p></td></tr>
+                <tr><td><p id="emailform">
+                    Git link :* <br><input name="project Git link" type="url" style="width: 100%;" required>
+                </p></td></tr>
+                <tr><td><input type="submit" value="Submit" class="btn"></td></tr>
+            </form>
+        </table>
+    <a href="#ForScroll" id="myBtn" title="Go to top">^</a>
+
+    <footer>
+        <center>
+            <h1>Freelancer Mediator</h1>
+            <br>
+            <h4>© freelancer mediator, All rights Reserved.</h4>
+            <h3>Group 3 The Developer and Group Owned</h3>
+        </center>
+    </footer>
+</body>
+</html>

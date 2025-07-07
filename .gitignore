@@ -1,0 +1,31 @@
+# Ignore environment variables
+.env
+
+# Ignore PDF or document files
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore compressed files
+*.zip
+*.rar
+*.7z
+
+# If you use Python (uncomment if needed)
+# __pycache__/
+# *.py[cod]
+# venv/
+
+# If you use Node.js (uncomment if needed)
+# node_modules/
+# dist/
+node_modules/
